@@ -7,3 +7,6 @@ Deploys a single Ubuntu instance as a t2.micro and runs a busybox web server on 
 
 ### Autoscaling Web Server Cluster
 Deploys a classic load balancer fronted autoscaling group of Ubuntu web servers that spans two Availability Zones. Includes health checks for created instances.
+
+### Backend: S3
+Deploys an S3 bucket with versioning for remote state, and a DynamoDB table for state locking.
