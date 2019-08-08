@@ -17,9 +17,9 @@ variable "elb_port" {
 }
 
 resource "aws_launch_configuration" "example" {
-  image_id          = "ami-07d0cf3af28718ef8"
-  instance_type     = "t2.micro"
-  security_groups   = [aws_security_group.instance.id]
+  image_id        = "ami-07d0cf3af28718ef8"
+  instance_type   = "t2.micro"
+  security_groups = [aws_security_group.instance.id]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -66,8 +66,8 @@ resource "aws_security_group" "elb" {
 }
 
 resource "aws_autoscaling_group" "example" {
-  launch_configuration  = aws_launch_configuration.example.id
-  availability_zones    = data.aws_availability_zones.available.names
+  launch_configuration = aws_launch_configuration.example.id
+  availability_zones   = data.aws_availability_zones.available.names
 
   load_balancers    = [aws_elb.example.name]
   health_check_type = "ELB"
