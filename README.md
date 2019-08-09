@@ -1,4 +1,5 @@
 # Terraform Examples
+These example projects are built on those found in __Terraform: Up and Running__, by Yevgeniy Brikman. Enough had changed in Terraform since the first edition was released in 2017 that I found myself having to dig into the Terraform documentation frequently in order to figure out why the code in the book didn't work anymore. These examples are verified to work with Terraform v0.12.
 
 ### Provider: AWS
 
@@ -13,3 +14,6 @@ Deploys an S3 bucket with versioning for remote state, and a DynamoDB table for 
 
 #### Multifile Autoscaling Web Server Cluster
 Combines the S3 backend with the autoscaling web server cluster and adds an RDS instance. The web server cluster reads the remote state file of the RDS instance to get its DNS name and port. The configs are organized into a hierarchical file structure with vars, outputs and resources broken out into their own .tf configuration files. 
+
+#### Multi-Environment Web Server Cluster with Modules
+Deploys the autoscaling web server cluster into stage and prod environments using web cluster and database modules to limit code re-use. Adds autoscaling schedules for the prod autoscaling group to scale up during business hours and back down at night.
