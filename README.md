@@ -1,7 +1,16 @@
 # Terraform Examples
-These example projects are built on those found in __Terraform: Up and Running__, by Yevgeniy Brikman. Enough had changed in Terraform since the first edition was released in 2017 that I found myself having to dig into the Terraform documentation frequently in order to figure out why the code in the book didn't work anymore. These examples are verified to work with Terraform v0.12.
+
+### Provider: Alibaba
+Simple projects using Terraform to spin up resources in Alibaba.
+
+#### Single VPC
+Single .tf file that creates a new VPC in Virginia with a single vswitch subnet.
+
+#### Modularized Multi-VPC Environment
+Expansion of the single VPC project. This creates a VPC module that is used to spin up two VPCs, one in Virginia and one in Shanghai.
 
 ### Provider: AWS
+These example projects are built on those found in __Terraform: Up and Running__, by Yevgeniy Brikman. Enough had changed in Terraform since the first edition was released in 2017 that I found myself having to dig into the Terraform documentation frequently in order to figure out why the code in the book didn't work anymore. These examples are verified to work with Terraform v0.12.
 
 #### Single Web Server
 Deploys a single Ubuntu instance as a t2.micro and runs a busybox web server on port 8080. Also deploys and attaches a security group to allow inbound connections on the same port. Outputs the public IP of the instance.
